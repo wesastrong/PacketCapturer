@@ -12,14 +12,15 @@ using SharpPcap;
 
 namespace MyRealPacketCapturer
 {
-    public partial class Form1 : Form
+    public partial class frmCapture : Form
     {
         CaptureDeviceList devices;
         public static ICaptureDevice device;
         public static string stringPackets = "";
         static int numPackets = 0;
+        frmSend fSend;
 
-        public Form1()
+        public frmCapture()
         {
             InitializeComponent();
 
@@ -168,6 +169,20 @@ namespace MyRealPacketCapturer
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sendWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frmSend.instantiations == 0)
+            {
+                fSend = new frmSend();
+                fSend.Show();
+            }
+        }
+
+        private void captureToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

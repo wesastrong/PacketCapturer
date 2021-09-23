@@ -1,7 +1,7 @@
 ﻿
 namespace MyRealPacketCapturer
 {
-    partial class Form1
+    partial class frmCapture
     {
         /// <summary>
         /// Required designer variable.
@@ -45,6 +45,8 @@ namespace MyRealPacketCapturer
             this.txtNumPackets = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.captureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sendWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,13 +85,15 @@ namespace MyRealPacketCapturer
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.screenToolStripMenuItem});
+            this.screenToolStripMenuItem,
+            this.captureToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 42);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,7 +103,7 @@ namespace MyRealPacketCapturer
             this.saveToolStripMenuItem,
             this.openToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 36);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(72, 38);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // saveToolStripMenuItem
@@ -121,7 +125,7 @@ namespace MyRealPacketCapturer
             this.screenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearToolStripMenuItem});
             this.screenToolStripMenuItem.Name = "screenToolStripMenuItem";
-            this.screenToolStripMenuItem.Size = new System.Drawing.Size(107, 36);
+            this.screenToolStripMenuItem.Size = new System.Drawing.Size(107, 38);
             this.screenToolStripMenuItem.Text = "Screen";
             // 
             // clearToolStripMenuItem
@@ -162,7 +166,23 @@ namespace MyRealPacketCapturer
             this.label2.TabIndex = 6;
             this.label2.Text = "Device(s)";
             // 
-            // Form1
+            // captureToolStripMenuItem
+            // 
+            this.captureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sendWindowToolStripMenuItem});
+            this.captureToolStripMenuItem.Name = "captureToolStripMenuItem";
+            this.captureToolStripMenuItem.Size = new System.Drawing.Size(119, 38);
+            this.captureToolStripMenuItem.Text = "Capture";
+            this.captureToolStripMenuItem.Click += new System.EventHandler(this.captureToolStripMenuItem_Click);
+            // 
+            // sendWindowToolStripMenuItem
+            // 
+            this.sendWindowToolStripMenuItem.Name = "sendWindowToolStripMenuItem";
+            this.sendWindowToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.sendWindowToolStripMenuItem.Text = "&Send Window";
+            this.sendWindowToolStripMenuItem.Click += new System.EventHandler(this.sendWindowToolStripMenuItem_Click);
+            // 
+            // frmCapture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,7 +195,7 @@ namespace MyRealPacketCapturer
             this.Controls.Add(this.btnStartStop);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "frmCapture";
             this.Text = "Packet Capture";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -201,6 +221,8 @@ namespace MyRealPacketCapturer
         private System.Windows.Forms.TextBox txtNumPackets;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem captureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sendWindowToolStripMenuItem;
     }
 }
 
